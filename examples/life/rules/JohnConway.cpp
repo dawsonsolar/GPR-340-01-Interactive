@@ -14,6 +14,11 @@ void JohnConway::Step(World& world) {
         else
           world.SetNext(tempPoint, true);
       }
+      else
+      {
+        if (CountNeighbors(world, tempPoint) == 3)
+          world.SetNext(tempPoint, true);
+      }
     }
   }
   world.SwapBuffers();
