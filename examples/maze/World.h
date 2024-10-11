@@ -62,6 +62,8 @@ public:
 
   int GetSize() const;
 
+  bool isValidPosition(const Point2D& p);
+
 private:
   void step();
 };

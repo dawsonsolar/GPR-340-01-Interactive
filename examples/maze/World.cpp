@@ -184,3 +184,9 @@ void World::SetNodeColor(const Point2D& node, const Color32& color) { colors[(no
 Color32 World::GetNodeColor(const Point2D& node) { return colors[(node.y + sideSize / 2) * sideSize + node.x + sideSize / 2]; }
 
 int World::GetSize() const { return sideSize; }
+
+bool World::isValidPosition(const Point2D& p)
+{
+  auto sideOver2 = sideSize / 2;
+  return (p.x >= -sideOver2) && (p.x <= sideOver2) && (p.y <= sideOver2) && (p.y >= -sideOver2);
+}
